@@ -884,14 +884,14 @@ print(
 years = sorted(anual['ano'].unique())
 
 # Define the number of top parliamentarians to display per year
-TOP_N_PARLAMENTARIANS = 10
+TOP_N_PARLAMENTARES = 10
 
 # Generate a plot for each year
 for year in years:
     # Filter data for the current year and sort by 'pct_teto_uso'
     df_year = anual[anual['ano'] == year].sort_values(
         'pct_teto_uso', ascending=False
-    ).head(TOP_N_PARLAMENTARIANS)
+    ).head(TOP_N_PARLAMENTARES)
 
     if not df_year.empty:
         fig = px.bar(
@@ -899,7 +899,7 @@ for year in years:
             x='pct_teto_uso',
             y='nome_parlamentar',
             orientation='h',
-            title=f'Top {TOP_N_PARLAMENTARIANS} Parliamentarians by CEAP Usage - {year}',
+            title=f'Top {TOP_N_PARLAMENTARES} Parliamentarians by CEAP Usage - {year}',
             labels={'pct_teto_uso': 'Percentage of Annual Quota Used', 'nome_parlamentar': 'Parliamentarian Name'},
             template='plotly_white'
         )
@@ -1452,9 +1452,8 @@ print("Outputs salvos em outputs/figures/ ✓")
 # Resultados
 Análise de Conformidade da CEAP
 
-A análise dos dados brutos indica que uma parcela dos parlamentares apresenta gastos que ultrapassam de forma recorrente o teto regulamentar para suas unidades federativas.*Observa-se um padrão de repetição estatística, onde parlamentares que extrapolam o limite da Cota para Exercício da Atividade Parlamentar (CEAP) em um período tendem a repetir o comportamento nos anos subsequentes, sugerindo que a extrapolação possui caráter habitual.
+A análise dos dados brutos indica que uma parcela dos parlamentares apresenta gastos que se aproximam muito do teto de gastos e chegam até a ultrapassa-lo, peincipalmente na 57º legislatura. Observa-se um padrão de repetição estatística, onde parlamentares que extrapolam o limite da Cota para Exercício da Atividade Parlamentar (CEAP) em um período tendem a repetir o comportamento nos anos subsequentes, sugerindo que a extrapolação possui caráter habitual.
 Estes achados sugerem  indícios de uso intensivo da cota ao longo do tempo, especialmente entre o grupo destacado.
-
 
 Evolução Temporal e Distribuição Geográfica
 
